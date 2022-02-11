@@ -1,64 +1,41 @@
+import React, { useEffect, useState } from "react";
+import { useLocation, useOutletContext, Link, Outlet } from "react-router-dom";
 
-import React, { useState, useEffect } from 'react'
+import { getProducts } from "../data";
 
-import { Link ,useParams, } from 'react-router-dom'
+function importAll(r) {
+  let images = {};
+  console.log(images)
+  r.keys().map((item) => (images[item.slice(5, 6)] = []));
+  console.log(images)
+  r.keys().forEach((item) => images[item.slice(5, 6)].push(r(item)));
+  return images;
+}
+const images = importAll(
+  require.context("../imgs", false, /\.(png|jpe?g|svg|webp)$/)
+);
 
+export default function Shop() {
+  const [count, setCount] = useOutletContext();
 
-export default function Shop(props) {
-    useEffect(() => {
-       if(items.length === 0){
-            fetchItems()
-            fetchCategories()
-        }
-    },[])
+  let products = getProducts();
 
-    let params = useParams()
+  useEffect(() => {
+    console.log(images);
+  }, []);
 
-    const [items, setItems] = useState([])
-    const [categories, setCategories] = useState([])
-
-    const fetchItems = async () => {
-        const data = await fetch(
-            'https://fakestoreapi.com/products/'     
-             )
-        let items = await data.json()
-        setItems(items)
-        props.saveAllItemsInApp(items)
-    }
-
-
-    const fetchCategories = async () => {
-        const data = await fetch(
-            'https://fakestoreapi.com/products/categories'
-                         )
-        let items = await data.json()
-        setCategories(items)
-    }
-
-
-
- 
-
-    function addToCart(e){
-        props.addToCart(items[e.target.dataset.id - 1])
-    }
-
-    return (
-        <div className='shopItself'>
-            {items.map(item => (
-                <div className='shopCard'  key={item.id} >
-                  <Link to={`/shop/${item.id}`} >
-                      {item.title}
-                    <img className='shop-img' src={item.image}></img>
-                    </Link>  
-                    <button onClick={addToCart} className='addToCart' data-id={item.id}>Add</button>
-                </div>
-    ))}
-    <ul>
-        {categories.map(item =>(
-            <Link key={item} to={`/${item}`}>{item}</Link>
-        ))}
-    </ul>
+  return (
+    <main style={{ padding: "1rem 0" }}>
+      <h2>Shop</h2>
+      {products.map((product) => (
+        <div>
+          <Link to={`/shop/${product.number}`} key={product.number}>
+            {product.name}
+          </Link>
+          <img src={images[product.number][0]}></img>
         </div>
-    )
+      ))}
+      <Outlet />
+    </main>
+  );
 }
