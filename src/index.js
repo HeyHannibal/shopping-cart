@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import "./styles/index.css";
 import App from "./App";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route,} from "react-router-dom";
+
+import Landing from './components/landing'
 
 import Shop from "./components/shop";
 import Product from "./components/shop-product";
@@ -15,6 +17,10 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+       
+          <Route path="/" element={<Landing/>}/>
+          <Route path="/landing" element={<Landing/>}/>
+
           <Route path="/cart" element={<Cart />} />
           <Route path="shop" element={<Shop />}>
             <Route path=":shopId" element={<Product />} />
@@ -24,7 +30,7 @@ ReactDOM.render(
               index
               element={
                 <main style={{ padding: "1rem" }}>
-                  <p>Select an Product</p>
+                 {<Landing/>}
                 </main>
               }
             />

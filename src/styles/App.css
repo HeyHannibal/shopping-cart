@@ -1,3 +1,84 @@
 img{
     width: 200px;
 }
+button{
+    background-color: transparent;
+    border: none;
+}
+
+
+/* header */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    color: rgb(34, 34, 34);
+    padding: 0.5rem 1rem;
+    height: 5rem;
+}
+h1{
+    font-family: 'PT Sans';
+    letter-spacing: 2px;
+    padding: 0;
+    margin:0;
+    text-align: center;
+}
+p a{
+    color: rgb(202, 0, 0);
+}
+svg.redIcon{
+    color:rgb(202, 0, 0);
+   
+}
+
+
+nav{
+    display: flex;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-top: 1px solid rgb(221, 221, 221);
+    box-shadow:  0 6px 4px -4px rgb(240, 240, 240);
+    
+}
+li{
+    list-style: none;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    letter-spacing: 0.15rem;
+    font-size: 1.1rem;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+  ul{
+    list-style: none;
+    display: flex;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    align-items: center;
+    margin: 0.4rem;
+  }
+  
+  .navLink{
+    display: inline-block;
+    position: relative;
+  }
+  .navLink:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ca0000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .navLink:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }

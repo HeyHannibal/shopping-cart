@@ -1,6 +1,7 @@
 import { useParams, useOutletContext, Link } from "react-router-dom";
 import { getProduct, getProductCategory } from "../data";
 import uniqid from 'uniqid'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 
 export default function Category() {
@@ -21,7 +22,7 @@ export default function Category() {
                     <p>{product.name}</p>
                     </Link>
                     <img src={product.images[0]}></img>
-                    <button onClick={addToCart} data-name={product.name}>Add To Cart</button>
+                    <button onClick={addToCart} data-name={product.name}><AddShoppingCartIcon/></button>
                 </div>
             ))}
         </div>
