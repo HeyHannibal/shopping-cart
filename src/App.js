@@ -4,23 +4,32 @@ import { useState } from 'react'
 
 import { BrowserRouter, Route, Link, Outlet } from 'react-router-dom'
 
+import { getBrands } from "./data";
 
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const [cart, setCart] = useState([])
+
+  function removeCart(e) {
+      let removed = cart.filter(item => item.name !== e.target.dataset.name)
+       setCart(removed)
+  }
 
   return (
     <div>
       <h1>Shop Of Things</h1>
-      <p>{count}</p>
+      
       <nav>
         <li>
           <Link to='/shop'>shop</Link>
         </li>
+        <li>
+          <Link to='/cart'>cart</Link>
+        </li>
       </nav>
 
-    <Outlet context={[count, setCount]}/> 
+    <Outlet context={[cart, setCart, removeCart]}/> 
 
     </div>
   );

@@ -7,24 +7,29 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Shop from "./components/shop";
 import Product from "./components/shop-product";
+import Cart from "./components/cart";
+import Category from "./components/category";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route path="/cart" element={<Cart />} />
           <Route path="shop" element={<Shop />}>
             <Route path=":shopId" element={<Product />} />
+             <Route path="category/:categoryname/:categoryselector" element={<Category />} /> 
+
             <Route
-            index
-            element={
-              <main style={{ padding: "1rem" }}>
-                <p>Select an Product</p>
-              </main>
-            }
-          />
+              index
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>Select an Product</p>
+                </main>
+              }
+            />
           </Route>
-          
+
           <Route
             path="*"
             element={
