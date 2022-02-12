@@ -48,7 +48,7 @@ export default function Shop() {
           </li>
         ))}
       </ul>
-      <Outlet context={[cart, setCart, removeCart]}/>
+      <Outlet context={[cart, setCart, removeCart]}/> 
     </main>
   );
 }

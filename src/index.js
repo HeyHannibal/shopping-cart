@@ -16,13 +16,12 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route  element={<App />}>
        
-          <Route path="/" element={<Landing/>}/>
-          <Route path="/landing" element={<Landing/>}/>
+          <Route path="/" exact element={<Landing/>}/>
 
           <Route path="/cart" element={<Cart />} />
-          <Route path="shop" element={<Shop />}>
+          <Route path="/shop" element={<Shop />}>
             <Route path=":shopId" element={<Product />} />
              <Route path="category/:categoryname/:categoryselector" element={<Category />} /> 
 
@@ -30,7 +29,7 @@ ReactDOM.render(
               index
               element={
                 <main style={{ padding: "1rem" }}>
-                 {<Landing/>}
+                 {<h1>Hi</h1>}
                 </main>
               }
             />

@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div id='appDiv'>
       <header>
         <p id='phone' className='headerTxt'>Call guitar factory today: <a href='tel:02 5993 5555'>02 5993 5555</a></p>
         <h1 id='headerTitle' className='headerTxt'>Guitar Factory</h1>
@@ -34,7 +34,7 @@ function App() {
             <Link className='navLink' to='/cart'>cart</Link>
           </li>
           <li>
-            <Link className='navLink' to='/landing'>home</Link>
+            <Link className='navLink' to='/'>home</Link>
           </li>
         </ul>
       </nav>
