@@ -16,6 +16,8 @@ function App() {
        setCart(removed)
   }
 
+
+
   return (
     <div id='appDiv'>
       <header>

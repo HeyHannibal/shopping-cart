@@ -8,8 +8,9 @@ let products = [
     price: 1300,
     images: [],
     brand: 'Fender',
-    body: 'telecaster'
+    body: 'telecaster',
 
+    amount: 0,
   },
   {
     name: "Fender Telecater Custom Shop Butterscotch Heavy Relic",
@@ -17,8 +18,9 @@ let products = [
     price: 2600,
     images: [],
     brand: 'Fender',
-    body: 'telecaster'
+    body: 'telecaster',
 
+    amount: 0,
   },
   {
     name: "Fender Player Jazzmaster Pacific Peach",
@@ -26,7 +28,8 @@ let products = [
     price: 950,
     images: [],
     brand: 'Fender',
-    body: 'offset'
+    body: 'offset',
+    amount: 0,
   },
   {
     name: "Mayones Regius Core V24 6 Aquamarine Galaxy",
@@ -34,7 +37,8 @@ let products = [
     price: 6000,
     images: [],
     brand: 'Mayones',
-    body: 'modern'
+    body: 'modern',
+    amount: 0,
   },
   {
     name: "Gibson ES-335",
@@ -43,7 +47,8 @@ let products = [
     images: [],
     brand: 'Gibson',
     body: 'hollow-body',
-  }
+    amount: 0,
+  },
 ];
 
 
@@ -83,7 +88,7 @@ export function getProductCategory(category, selector) {
 
 
 function importAll(r) {
-  r.keys().forEach((item) => products[Number(item.slice(5, 6))]['images'].push(r(item)));
+  r.keys().forEach((item) => products[Number(item.slice(5, 7))]['images'].push(r(item)));
   console.log(products)
 }
 importAll(

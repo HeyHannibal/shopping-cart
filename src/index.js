@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./styles/index.css";
 import App from "./App";
 
-import { BrowserRouter, Routes, Route,} from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 
 import Landing from './components/landing'
 
@@ -29,7 +29,7 @@ ReactDOM.render(
               index
               element={
                 <main style={{ padding: "1rem" }}>
-                 {<h1>Hi</h1>}
+                 {<Category />}
                 </main>
               }
             />

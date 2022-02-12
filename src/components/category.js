@@ -7,22 +7,24 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 export default function Category() {
     let params = useParams();
     let products = getProductCategory(params.categoryname, params.categoryselector)
-    const [cart, setCart] = useOutletContext();
-
-    function addToCart(e) {
-        let addThis = products.find(item => item.name === e.target.dataset.name)
-         setCart(prev => [...prev, addThis])
+    const [cart, removeCart, addToCart] = useOutletContext();
+    function add(e) {
+        addToCart(e.currentTarget.dataset.name)
     }
-    
+
     return (
-        <div>
+        <div id='shopWindowDiv'>
             {products.map(product => (
-                <div key={uniqid()}>
+                <div key={uniqid()} className='guitarDiv'>
+
                     <Link to={`/shop/${product.number}`} key={product.number}>
-                    <p>{product.name}</p>
+                        <img src={product.images[0]}></img>
+                        <p>{product.name}</p>
+                        <p>${product.price}</p>
                     </Link>
-                    <img src={product.images[0]}></img>
-                    <button onClick={addToCart} data-name={product.name}><AddShoppingCartIcon/></button>
+                    <AddShoppingCartIcon className='addToCart' onClick={add} data-name={product.name}/>
+
+
                 </div>
             ))}
         </div>
