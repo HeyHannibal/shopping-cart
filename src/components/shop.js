@@ -59,7 +59,7 @@ export default function Shop() {
           {categories.pricerange.map((price) => (
             <li key={uniqid()}>
               <Link to={`/shop/category/pricerange/${price}`}>
-                {price[0]}-{price[1]}
+                {price[0]}{(price[1] === Infinity) ? '+' : `-${price[1]}`}
               </Link>
             </li>
           ))}

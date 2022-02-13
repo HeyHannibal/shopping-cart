@@ -10,7 +10,7 @@ let products = [
     brand: 'Fender',
     body: 'telecaster',
 
-    amount: 0,
+    amount: 1,
   },
   {
     name: "Fender Telecater Custom Shop Butterscotch Heavy Relic",
@@ -20,7 +20,7 @@ let products = [
     brand: 'Fender',
     body: 'telecaster',
 
-    amount: 0,
+    amount: 1,
   },
   {
     name: "Fender Player Jazzmaster Pacific Peach",
@@ -29,7 +29,7 @@ let products = [
     images: [],
     brand: 'Fender',
     body: 'offset',
-    amount: 0,
+    amount: 1,
   },
   {
     name: "Mayones Regius Core V24 6 Aquamarine Galaxy",
@@ -38,7 +38,7 @@ let products = [
     images: [],
     brand: 'Mayones',
     body: 'modern',
-    amount: 0,
+    amount: 1,
   },
   {
     name: "Gibson ES-335",
@@ -47,7 +47,7 @@ let products = [
     images: [],
     brand: 'Gibson',
     body: 'hollow-body',
-    amount: 0,
+    amount: 1,
   },
 ];
 
