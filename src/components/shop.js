@@ -21,10 +21,15 @@ export default function Shop() {
     } else {
       setCart(prev => [...prev, addThis])
     }
-   
+   console.log('call')
 }
 
 
+
+
+function conn(e) {
+  console.log(e)
+}
   return (
     <main id='shop'>
       <div id='shopNav'>
@@ -68,3 +73,4 @@ export default function Shop() {
     </main>
   );
 }
+

@@ -1,50 +1,89 @@
-#shop{
-    display: flex;
+#shop {
+  display: flex;
 }
-#shopNav{
-    border-right: 1px solid gainsboro;
-    padding-right: 3rem;
+#shopNav {
+  border-right: 1px solid gainsboro;
+  padding-right: 3rem;
 }
-#shopNav ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin:  2rem 0px 2rem 0px;
+#shopNav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 2rem 0px 2rem 0px;
 }
-#shopNav li{
-    text-transform: capitalize;
-    padding: 0;
-    font-family: 'Source Sans Pro';
-    font-size: 1.1rem;
+#shopNav li {
+  text-transform: capitalize;
+  padding: 0;
+  font-family: "Source Sans Pro";
+  font-size: 1.1rem;
 }
-#shopNav p{
-    font-family: 'Source Sans Pro';
-    margin: 0;
-    padding: 0;
-    color: rgb(63, 15, 15)
+#shopNav p {
+  font-family: "Source Sans Pro";
+  margin: 0;
+  padding: 0;
+  color: rgb(63, 15, 15);
+}
+#shopWindowDiv {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.guitarDiv {
+  width: 12rem;
+  margin: 1rem;
+}
+.guitarDiv img {
+  z-index: -10;
+}
+.guitarDiv p {
+  font-family: "PT Sans";
+  height: 3rem;
+}
+.addToCart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 10rem;
+  top: -90%;
+  background-color: rgb(62, 62, 71);
+  border-radius: 50px;
+  padding: 0.4rem;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  transition: transform 0.1s ease-in-out;
 }
 
+.addToCart::after {
+  content: "";
+  border-radius: 50px;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  z-index: -1;
+  background-color: transparent;
+  color: white;
+  transition: all 0.4s;
+}
 
-#shopWindowDiv{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
+.addToCart:hover::after {
+  background: rgb(62, 62, 71)
+    radial-gradient(circle, transparent 1%, rgb(89, 89, 100) 1%) center/15000%;
+  transform: scale(2);
+  opacity: 0;
 }
-.guitarDiv{
-    width: 12rem;
-    margin: 1rem;
+.addToCart svg {
+  color: white;
+  transition: color 0.1s ease-in;
 }
-.guitarDiv p{
-    font-family: 'PT Sans';
+.addToCart:active {
+  background-color: rgb(60, 60, 78);
+  background-size: 100%;
+  transition: background 0s;
 }
-.guitarDiv .addToCart{
-    position:relative;
-    left: 10rem;
-    top: -90%;
-    background-color: rgb(71, 62, 62);
-    border-radius: 50px;
-    padding:0.4rem;
-    color:white;
-    z-index: 10;
+.addToCart:active svg {
+  color: rgb(0, 221, 37);
 }
