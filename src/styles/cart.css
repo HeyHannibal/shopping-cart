@@ -1,3 +1,9 @@
+#cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .productCardContainer {
   display: flex;
   flex-direction: column;
@@ -8,49 +14,147 @@
 .cartProductCard {
   display: flex;
   align-items: center;
-  margin: 1rem;
-  width: 70vw;
+  margin: 0 1rem 0 1rem;
+  width: 72vw;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  border-top: none;
 
+}
+.productCardContainer div:nth-of-type(2){
+  margin: 0rem 1rem 0 1rem;
+  border-bottom: 1px solid rgb(212, 212, 212);
+  border-top: 1px solid rgb(212, 212, 212);
+}
+
+.cartItem {
+  display: flex;
+  width: 70%;
 }
 .cartProductCard img {
   width: 8rem;
   border: 1px solid gainsboro;
   border-radius: 10px;
+  align-self: center;
+  margin: 0.4rem 0 0.4rem;
 }
 
 .titleDiv {
-  align-self: baseline;
-  margin-top: 3rem;
-  margin-left: 3rem;
+  align-self: center;
+
   font-weight: 400;
   width: 60%;
 }
-.titleDiv h3{
-    font-weight: 400;
+.titleDiv h3 {
+  font-family: "PT Sans";
+  font-weight: 300;
+  margin-left: 1rem;
+}
+.titleDiv p {
+  font-weight: 400;
+  color: rgb(39, 175, 39);
+  margin-left: 1rem;
 
 }
-.titleDiv p{
-    font-weight: 400;
-    color: rgb(39, 175, 39);
-}
-.cartDeleteIcon{
-align-self: flex-end;
-margin-left: -5px;
-}
-.cartProductCard .price {
-    align-self: center;
-    font-size: 1.1rem;
-}
-.imageAndQuantity div:first-of-type {
-  position: relative;
-  left: 7rem;
-  top: 1rem;
-  background-color: rgb(228, 228, 228);
+
+.productCardContainer input{
   width: 2rem;
-  height: 2rem;
+  margin-right: 2rem;
+  margin-left: auto;
+}
+#totalAndCheckout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-left: auto;
+    margin-top: 1rem;
+    padding: 1rem;
+    
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px -1px rgb(173, 173, 173);
+}
+#totalAndCheckout button {
+  background-color: rgb(11, 11, 22);
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px grey;
+  font-family: "Source Sans Pro";
+  font-size: 1.3rem;
+  color: white;
+  transition: transform 0.1s ease-out;
+  grid-area: 3 / 1 / 4 / 3; 
+
+}
+#totalAndCheckout button:hover {
+  transform: translateY(3px);
+  box-shadow: 2px 2px 10px grey;
+}
+#totalAndCheckout h4{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#totalAndCheckout h4:nth-of-type(even){
+  margin-left: auto;
+}
+
+.productCardContainer .price{
+  margin:0;
+  margin-left:auto;
+  margin-right: 1rem;
+  
+}
+.cartDeleteIcon {
+  margin-right: 1rem;
+}
+.tables {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  box-shadow: 1px 1px 5px -1px rgb(122, 122, 122);
+  justify-content: space-between;
+  width: 72vw;
+  margin: 1rem;
+}
+
+.tables p:first-child{
+  width: 70%;
+
+}
+.tables p:nth-child(2) {
+  margin-left: auto;
+}
+.tables p:nth-child(3) {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .cartProductCard {
+
+    width: 90vw;
+  }
+  .tables {
+    width: 90vw;
+    
+  }
+  .cartProductCard img {
+    width: 6rem;
+  }
+  .tables p:first-child{
+    width: 60%;
+  
+  }
+  .cartItem{
+    width: 60%;
+  }
+  .cartItem h3{
+    font-size: 0.9rem;
+  }
+  .tables p:first-child{
+    width: 60%;
+  }
+  
+  .tables p{
+    font-size: 0.8rem;
+  }
 }

@@ -35,6 +35,9 @@
     width: 12rem;
     margin: 1rem;
 }
+.guitarDiv p{
+    font-family: 'PT Sans';
+}
 .guitarDiv .addToCart{
     position:relative;
     left: 10rem;

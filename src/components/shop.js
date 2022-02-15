@@ -20,7 +20,6 @@ export default function Shop() {
       setCart(newCart)
     } else {
       setCart(prev => [...prev, addThis])
-      console.log(cart,'add') 
     }
    
 }

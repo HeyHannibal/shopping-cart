@@ -14,17 +14,15 @@ export default function Category() {
 
     return (
         <div id='shopWindowDiv'>
+            
             {products.map(product => (
                 <div key={uniqid()} className='guitarDiv'>
-
                     <Link to={`/shop/${product.number}`} key={product.number}>
                         <img src={product.images[0]}></img>
                         <p>{product.name}</p>
                         <p>${product.price}</p>
                     </Link>
-                    <AddShoppingCartIcon className='addToCart' onClick={add} data-name={product.name}/>
-
-
+                    <AddShoppingCartIcon className='addToCart' onClick={add} data-name={product.name} />
                 </div>
             ))}
         </div>
